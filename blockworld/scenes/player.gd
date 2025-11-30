@@ -1,10 +1,20 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 8.0
+const JUMP_VELOCITY = 8
 
-var gravity = ProjectSettings.get_setting('physics/2d/default_gravity')
+var gravity = 16
+var sensitivity = 0.002
+@onready var camera_3d = $Camera3D
+
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _unhandled_input(event):
+	if event is InputEventMouseMotion:
+		rotation.y = rotation.y - event.relative.x * sensitivity
+		camera_3d.rotation.x = camera_3d.rotation.x - event.relative.y * sensitivity
 
 func _physics_process(delta):
 	# Add the gravity.
