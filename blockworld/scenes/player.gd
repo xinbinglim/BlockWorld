@@ -16,7 +16,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		rotation.y = rotation.y - event.relative.x * sensitivity
 		camera_3d.rotation.x = camera_3d.rotation.x - event.relative.y * sensitivity
-		camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-70), deg_to_rad(80))
+		camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-90), deg_to_rad(80))
 func _physics_process(delta):
 	
 	if not is_on_floor():
@@ -41,5 +41,10 @@ func _physics_process(delta):
 		if ray_cast_3d.is_colliding():
 			if ray_cast_3d.get_collider().has_method('destroy_block'):
 				ray_cast_3d.get_collider().destroy_block(ray_cast_3d.get_collision_point() - ray_cast_3d.get_collision_normal())
+	
+	if Input.is_action_just_pressed('right click'):
+		if ray_cast_3d.is_colliding():
+			if ray_cast_3d.get_collider().has_method('place_block'):
+				ray_cast_3d.get_collider().place_block(ray_cast_3d.get_collision_point() + ray_cast_3d.get_collision_normal(), 6)
 			
 	move_and_slide()
