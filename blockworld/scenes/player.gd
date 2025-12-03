@@ -6,11 +6,15 @@ const JUMP_VELOCITY = 12.0
 
 var gravity := 24.0
 var sensitivity = 0.002
+var selected = 6
+
 @onready var camera_3d = $Camera3D
 @onready var ray_cast_3d = $Camera3D/RayCast3D
+@onready var hotbar = $Hotbar
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	hotbar.select(0)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -45,6 +49,19 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed('right click'):
 		if ray_cast_3d.is_colliding():
 			if ray_cast_3d.get_collider().has_method('place_block'):
-				ray_cast_3d.get_collider().place_block(ray_cast_3d.get_collision_point() + ray_cast_3d.get_collision_normal(), 6)
+				ray_cast_3d.get_collider().place_block(ray_cast_3d.get_collision_point() + ray_cast_3d.get_collision_normal(), selected)
+	
+	if Input.is_action_just_pressed("1"):
+		selected = 6
+		hotbar.select(0)
+	if Input.is_action_just_pressed("2"):
+		selected = 5
+		hotbar.select(1)
+	if Input.is_action_just_pressed("3"):
+		selected = 1
+		hotbar.select(2)
+	if Input.is_action_just_pressed("4"):
+		selected = 0
+		hotbar.select(3)
 			
 	move_and_slide()

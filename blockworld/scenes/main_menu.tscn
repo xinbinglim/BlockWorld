@@ -19,7 +19,7 @@ tonemap_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwgxs"]
 transparency = 1
-albedo_color = Color(0, 0.287939, 0.630772, 0.552941)
+albedo_color = Color(9.62615e-08, 0.245511, 0.549391, 0.717647)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4wyf3"]
 material = SubResource("StandardMaterial3D_rwgxs")
