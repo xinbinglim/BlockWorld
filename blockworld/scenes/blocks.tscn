@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://bb2uh5ac8h7ya"]
+[gd_scene load_steps=32 format=4 uid="uid://bb2uh5ac8h7ya"]
 
 [ext_resource type="Texture2D" uid="uid://14alxs26neqf" path="res://Pixel Blocks/glTF/Bricks_Grey_Blocks_PixelArt.png" id="1_1mwmw"]
 [ext_resource type="Texture2D" uid="uid://bb5kkgbdy2rdh" path="res://Pixel Blocks/glTF/Dirt_Blocks_PixelArt.png" id="2_wro84"]
@@ -48,6 +48,14 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lmd0r")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x152s"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mwmw"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wro84"]
+material = SubResource("StandardMaterial3D_1mwmw")
 size = Vector3(2, 2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sj6h1"]
@@ -296,6 +304,16 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bricks_Grey/StaticBody3D"]
 shape = SubResource("BoxShape3D_x152s")
 
+[node name="Trans" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6919, 0, 0)
+mesh = SubResource("BoxMesh_wro84")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Trans"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trans/StaticBody3D"]
+shape = SubResource("BoxShape3D_x152s")
+
 [node name="Dirt" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 mesh = SubResource("ArrayMesh_y6op6")
@@ -316,6 +334,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.062, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Grass/StaticBody3D6"]
 shape = SubResource("BoxShape3D_x152s")
+
+[node name="Grass2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("ArrayMesh_dcclb")
+skeleton = NodePath("")
 
 [node name="Leaves" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)

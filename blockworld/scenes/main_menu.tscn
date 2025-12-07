@@ -68,11 +68,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "New Game"
 
-[node name="Load" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Load"
-
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40

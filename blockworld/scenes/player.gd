@@ -1,10 +1,10 @@
 extends CharacterBody3D
 
 
-const SPEED = 8.0
+const SPEED = 7.0
 const JUMP_VELOCITY = 12.0
 
-var gravity := 24.0
+var gravity := 35.0
 var sensitivity = 0.002
 var selected = 6
 
@@ -63,5 +63,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("4"):
 		selected = 0
 		hotbar.select(3)
-			
+		
+	
+		
+
 	move_and_slide()
