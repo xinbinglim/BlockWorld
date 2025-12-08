@@ -68,3 +68,7 @@ func _physics_process(delta):
 		
 
 	move_and_slide()
+
+
+func _on_node_3d_child_entered_tree(node: Node) -> void:
+	set_global_position(Vector3(-5.0,8.0,5.0))
