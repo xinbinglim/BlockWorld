@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bij14qckilym5"]
+[gd_scene load_steps=15 format=3 uid="uid://bij14qckilym5"]
 
 [ext_resource type="Script" uid="uid://d4mgy51ohwi8o" path="res://scenes/world.gd" id="1_k0juu"]
 [ext_resource type="MeshLibrary" uid="uid://8ycmsiledfni" path="res://resources/blocks.tres" id="2_4wyf3"]
@@ -25,7 +25,22 @@ metallic_specular = 0.48
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4wyf3"]
 material = SubResource("StandardMaterial3D_rwgxs")
-size = Vector2(20, 20)
+size = Vector2(5000, 5000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_71j4m"]
+size = Vector3(1, 0.512817, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k0juu"]
+material = SubResource("StandardMaterial3D_rwgxs")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k0juu"]
+size = Vector3(1, 0.201294, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_71j4m"]
+material = SubResource("StandardMaterial3D_rwgxs")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qfnet"]
+material = SubResource("StandardMaterial3D_rwgxs")
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_k0juu")
@@ -38,7 +53,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_rwgxs")]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -5, 9.23262, 5)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -5, 8, 5)
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("2_4wyf3")
@@ -49,8 +64,14 @@ script = ExtResource("3_4wyf3")
 metadata/_editor_floor_ = Vector3(0, 5, 0)
 
 [node name="Lava" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.973396, -3.61195, 49.0573)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.973, -11.0417, 49.057)
 mesh = SubResource("PlaneMesh_4wyf3")
+
+[node name="Area3D" type="Area3D" parent="Lava"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lava/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.243591, 0)
+shape = SubResource("BoxShape3D_71j4m")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -74,25 +95,55 @@ text = "+"
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="Lava2" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.193591, 0, 0, 0, 1, 0, 0, 0, 0.10694, 2.16945, 12.0157, -104.153)
-mesh = SubResource("PlaneMesh_4wyf3")
+transform = Transform3D(1.812, 0, 0, 0, 9.339, 0, 0, 0, 1, 4.84654, 12.0157, -104.319)
+mesh = SubResource("PlaneMesh_k0juu")
 skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="Area3D" type="Area3D" parent="Node3D/Lava2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0913695, 0)
+shape = SubResource("BoxShape3D_k0juu")
 
 [node name="Lava3" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.193591, 0, 0, 0, 1, 0, 0, 0, 0.10694, 4.64148, 12.0157, -116.179)
-mesh = SubResource("PlaneMesh_4wyf3")
+transform = Transform3D(1.812, 0, 0, 0, 9.339, 0, 0, 0, 1, 0.127001, 12.0505, -108.988)
+mesh = SubResource("PlaneMesh_71j4m")
 skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="Area3D" type="Area3D" parent="Node3D/Lava3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0913695, 0)
+shape = SubResource("BoxShape3D_k0juu")
 
 [node name="Lava4" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.193591, 0, 0, 0, 1, 0, 0, 0, 0.10694, -0.062171, 12.0157, -111.046)
-mesh = SubResource("PlaneMesh_4wyf3")
+transform = Transform3D(1.812, 0, 0, 0, 9.339, 0, 0, 0, 1, 5.72904, 12.0506, -113.341)
+mesh = SubResource("PlaneMesh_qfnet")
 skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="Area3D" type="Area3D" parent="Node3D/Lava4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0913695, 0)
+shape = SubResource("BoxShape3D_k0juu")
 
 [node name="Lava5" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.193591, 0, 0, 0, 1, 0, 0, 0, 0.10694, -0.062171, 12.0157, -120.871)
-mesh = SubResource("PlaneMesh_4wyf3")
+transform = Transform3D(1.812, 0, 0, 0, 9.339, 0, 0, 0, 1, 0.0779309, 12.0506, -117.733)
+mesh = SubResource("PlaneMesh_qfnet")
 skeleton = NodePath("../..")
+metadata/_edit_group_ = true
 
-[connection signal="child_entered_tree" from="Lava" to="Player" method="_on_lava_child_entered_tree"]
-[connection signal="tree_entered" from="Lava" to="Player" method="_on_lava_tree_entered"]
-[connection signal="child_entered_tree" from="Node3D" to="Player" method="_on_node_3d_child_entered_tree"]
+[node name="Area3D" type="Area3D" parent="Node3D/Lava5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0913695, 0)
+shape = SubResource("BoxShape3D_k0juu")
+
+[connection signal="body_shape_entered" from="Lava/Area3D" to="." method="_on_area_3d_body_shape_entered"]
+[connection signal="body_entered" from="Node3D/Lava2/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Node3D/Lava3/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Node3D/Lava4/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Node3D/Lava5/Area3D" to="." method="_on_area_3d_body_entered"]
