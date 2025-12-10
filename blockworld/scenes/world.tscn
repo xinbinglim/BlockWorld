@@ -73,25 +73,6 @@ mesh = SubResource("PlaneMesh_4wyf3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.243591, 0)
 shape = SubResource("BoxShape3D_71j4m")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -41.5
-offset_right = 20.0
-offset_bottom = 41.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.32549)
-theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 60
-text = "+"
-
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="Lava2" type="MeshInstance3D" parent="Node3D"]
@@ -141,6 +122,26 @@ metadata/_edit_group_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava5/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0913695, 0)
 shape = SubResource("BoxShape3D_k0juu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -41.5
+offset_right = 20.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.32549)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 60
+text = "+"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_shape_entered" from="Lava/Area3D" to="." method="_on_area_3d_body_shape_entered"]
 [connection signal="body_entered" from="Node3D/Lava2/Area3D" to="." method="_on_area_3d_body_entered"]
