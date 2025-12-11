@@ -1,26 +1,26 @@
 [gd_scene load_steps=69 format=4 uid="uid://bb2uh5ac8h7ya"]
 
-[ext_resource type="Texture2D" uid="uid://14alxs26neqf" path="res://Pixel Blocks/glTF/Bricks_Grey_Blocks_PixelArt.png" id="1_1mwmw"]
-[ext_resource type="Texture2D" uid="uid://bhh3poo12kjy1" path="res://glTF-20251203T125534Z-1-001/glTF/Bricks_Dark_Blocks_PixelArt.png" id="2_5x58u"]
-[ext_resource type="Texture2D" uid="uid://bb5kkgbdy2rdh" path="res://Pixel Blocks/glTF/Dirt_Blocks_PixelArt.png" id="2_wro84"]
-[ext_resource type="Texture2D" uid="uid://cekjuly7cw0nv" path="res://Pixel Blocks/glTF/Grass_Blocks_PixelArt.png" id="3_rgft6"]
-[ext_resource type="Texture2D" uid="uid://nmpfm28ashrk" path="res://Pixel Blocks/glTF/Leaves_Blocks_PixelArt.png" id="4_cirlu"]
-[ext_resource type="Texture2D" uid="uid://dejs21ss0u4c8" path="res://Pixel Blocks/glTF/Stone_Blocks_PixelArt.png" id="5_mpxed"]
-[ext_resource type="Texture2D" uid="uid://boc8w6e7afgeg" path="res://Pixel Blocks/glTF/Wood_Blocks_PixelArt.png" id="6_nnip7"]
-[ext_resource type="Texture2D" uid="uid://g8j5nixatb0h" path="res://Pixel Blocks/glTF/WoodPlanks_Blocks_PixelArt.png" id="7_6nsvg"]
-[ext_resource type="Texture2D" uid="uid://d26g513bs1uuk" path="res://glTF-20251203T125534Z-1-001/glTF/Bricks_Red_Blocks_PixelArt.png" id="9_w60hs"]
-[ext_resource type="Texture2D" uid="uid://debmkv7dtwpjo" path="res://glTF-20251203T125534Z-1-001/glTF/Snow_Blocks_PixelArt.png" id="10_ic3an"]
-[ext_resource type="Texture2D" uid="uid://dvsq2vui1hy0e" path="res://glTF-20251203T125534Z-1-001/glTF/Ice_Blocks_PixelArt.png" id="11_s0i7d"]
-[ext_resource type="Texture2D" uid="uid://fvjyp5f31sn8" path="res://glTF-20251203T125534Z-1-001/glTF/Exclamation_Blocks_PixelArt.png" id="12_yfapm"]
-[ext_resource type="Texture2D" uid="uid://pylvywqfpuv" path="res://glTF-20251203T125534Z-1-001/glTF/Diamond_Blocks_PixelArt.png" id="13_m64mq"]
-[ext_resource type="Texture2D" uid="uid://cl8yu4nj57oqi" path="res://glTF-20251203T125534Z-1-001/glTF/QuestionMark_Blocks_PixelArt.png" id="14_03jfd"]
-[ext_resource type="Texture2D" uid="uid://dacs2t1q7vueu" path="res://glTF-20251203T125534Z-1-001/glTF/Coal_Blocks_PixelArt.png" id="15_wrnuw"]
-[ext_resource type="Texture2D" uid="uid://c0slkwcogtwmg" path="res://glTF-20251203T125534Z-1-001/glTF/Bricks_Yellow_Blocks_PixelArt.png" id="16_gl5s0"]
+[ext_resource type="Texture2D" uid="uid://14alxs26neqf" path="res://Pixel Blocks/glTF/Bricks_Grey_Blocks_PixelArt.png" id="1_ve885"]
+[ext_resource type="Texture2D" uid="uid://bhh3poo12kjy1" path="res://glTF-20251203T125534Z-1-001/glTF/Bricks_Dark_Blocks_PixelArt.png" id="2_thpum"]
+[ext_resource type="Texture2D" uid="uid://bb5kkgbdy2rdh" path="res://Pixel Blocks/glTF/Dirt_Blocks_PixelArt.png" id="3_epxho"]
+[ext_resource type="Texture2D" uid="uid://cekjuly7cw0nv" path="res://Pixel Blocks/glTF/Grass_Blocks_PixelArt.png" id="4_7kgqa"]
+[ext_resource type="Texture2D" uid="uid://nmpfm28ashrk" path="res://Pixel Blocks/glTF/Leaves_Blocks_PixelArt.png" id="5_4qhqx"]
+[ext_resource type="Texture2D" uid="uid://dejs21ss0u4c8" path="res://Pixel Blocks/glTF/Stone_Blocks_PixelArt.png" id="6_ikehr"]
+[ext_resource type="Texture2D" uid="uid://boc8w6e7afgeg" path="res://Pixel Blocks/glTF/Wood_Blocks_PixelArt.png" id="7_byqhx"]
+[ext_resource type="Texture2D" uid="uid://g8j5nixatb0h" path="res://Pixel Blocks/glTF/WoodPlanks_Blocks_PixelArt.png" id="8_kyp6d"]
+[ext_resource type="Texture2D" uid="uid://d26g513bs1uuk" path="res://glTF-20251203T125534Z-1-001/glTF/Bricks_Red_Blocks_PixelArt.png" id="9_ownir"]
+[ext_resource type="Texture2D" uid="uid://debmkv7dtwpjo" path="res://glTF-20251203T125534Z-1-001/glTF/Snow_Blocks_PixelArt.png" id="10_qx227"]
+[ext_resource type="Texture2D" uid="uid://dvsq2vui1hy0e" path="res://glTF-20251203T125534Z-1-001/glTF/Ice_Blocks_PixelArt.png" id="11_jabsv"]
+[ext_resource type="Texture2D" uid="uid://fvjyp5f31sn8" path="res://glTF-20251203T125534Z-1-001/glTF/Exclamation_Blocks_PixelArt.png" id="12_6xm60"]
+[ext_resource type="Texture2D" uid="uid://pylvywqfpuv" path="res://glTF-20251203T125534Z-1-001/glTF/Diamond_Blocks_PixelArt.png" id="13_rfap6"]
+[ext_resource type="Texture2D" uid="uid://cl8yu4nj57oqi" path="res://glTF-20251203T125534Z-1-001/glTF/QuestionMark_Blocks_PixelArt.png" id="14_cxpv4"]
+[ext_resource type="Texture2D" uid="uid://dacs2t1q7vueu" path="res://glTF-20251203T125534Z-1-001/glTF/Coal_Blocks_PixelArt.png" id="15_2wq25"]
+[ext_resource type="Texture2D" uid="uid://c0slkwcogtwmg" path="res://glTF-20251203T125534Z-1-001/glTF/Bricks_Yellow_Blocks_PixelArt.png" id="16_73u2l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lodxm"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("1_1mwmw")
+albedo_texture = ExtResource("1_ve885")
 roughness = 0.5
 texture_filter = 2
 
@@ -62,7 +62,7 @@ size = Vector3(2, 2, 2)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jas57"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("2_5x58u")
+albedo_texture = ExtResource("2_thpum")
 roughness = 0.5
 texture_filter = 2
 
@@ -112,7 +112,7 @@ size = Vector3(2, 2, 2)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sj6h1"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("2_wro84")
+albedo_texture = ExtResource("3_epxho")
 roughness = 0.5
 texture_filter = 2
 
@@ -151,7 +151,7 @@ shadow_mesh = SubResource("ArrayMesh_m7i7y")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u75os"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("3_rgft6")
+albedo_texture = ExtResource("4_7kgqa")
 roughness = 0.5
 texture_filter = 2
 
@@ -190,7 +190,7 @@ shadow_mesh = SubResource("ArrayMesh_grrlq")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie0dn"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("4_cirlu")
+albedo_texture = ExtResource("5_4qhqx")
 roughness = 0.5
 texture_filter = 2
 
@@ -229,7 +229,7 @@ shadow_mesh = SubResource("ArrayMesh_g8ptp")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bnpdn"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("5_mpxed")
+albedo_texture = ExtResource("6_ikehr")
 roughness = 0.5
 texture_filter = 2
 
@@ -268,7 +268,7 @@ shadow_mesh = SubResource("ArrayMesh_k4h04")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6t16k"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("6_nnip7")
+albedo_texture = ExtResource("7_byqhx")
 roughness = 0.5
 texture_filter = 2
 
@@ -307,7 +307,7 @@ shadow_mesh = SubResource("ArrayMesh_u2gwe")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gtic"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("7_6nsvg")
+albedo_texture = ExtResource("8_kyp6d")
 roughness = 0.5
 texture_filter = 2
 
@@ -346,7 +346,7 @@ shadow_mesh = SubResource("ArrayMesh_yopjm")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ugr1"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("9_w60hs")
+albedo_texture = ExtResource("9_ownir")
 roughness = 0.5
 texture_filter = 2
 
@@ -385,7 +385,7 @@ shadow_mesh = SubResource("ArrayMesh_da28t")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gx1c"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("10_ic3an")
+albedo_texture = ExtResource("10_qx227")
 roughness = 0.5
 texture_filter = 2
 
@@ -424,7 +424,7 @@ shadow_mesh = SubResource("ArrayMesh_x37wj")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij5ah"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("11_s0i7d")
+albedo_texture = ExtResource("11_jabsv")
 roughness = 0.5
 texture_filter = 2
 
@@ -463,7 +463,7 @@ shadow_mesh = SubResource("ArrayMesh_btvf6")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5p4jc"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("12_yfapm")
+albedo_texture = ExtResource("12_6xm60")
 roughness = 0.5
 texture_filter = 2
 
@@ -502,7 +502,7 @@ shadow_mesh = SubResource("ArrayMesh_a7rcu")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kj4bd"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("13_m64mq")
+albedo_texture = ExtResource("13_rfap6")
 roughness = 0.5
 texture_filter = 2
 
@@ -541,7 +541,7 @@ shadow_mesh = SubResource("ArrayMesh_it5hv")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unpqb"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("14_03jfd")
+albedo_texture = ExtResource("14_cxpv4")
 roughness = 0.5
 texture_filter = 2
 
@@ -580,7 +580,7 @@ shadow_mesh = SubResource("ArrayMesh_kpabb")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rdqa"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("15_wrnuw")
+albedo_texture = ExtResource("15_2wq25")
 roughness = 0.5
 texture_filter = 2
 
@@ -619,7 +619,7 @@ shadow_mesh = SubResource("ArrayMesh_ymol2")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjphu"]
 resource_name = "Blocks_Pixelart"
 cull_mode = 2
-albedo_texture = ExtResource("16_gl5s0")
+albedo_texture = ExtResource("16_73u2l")
 roughness = 0.5
 texture_filter = 2
 
