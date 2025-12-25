@@ -2,6 +2,9 @@ extends Node3D
 
 var current_spawn_point: Node3D
 
+func _init() -> void:
+
+
 func _process(delta):
 	if $Player.position.y < -5:
 		respawn()
@@ -19,3 +22,23 @@ func respawn():
 func _on_area_3d_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
 	if body == $Player:
 		respawn()
+	
+
+func _on_area_3d_1_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
+	
+	$fallingblocks.hide()
+
+func _on_area_3d_2_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
+	$fallingblocks2.hide()
+
+
+func _on_area_3d_3_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
+	$fallingblocks3.hide()
+
+
+func _on_area_3d_4_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
+	$fallingblocks4.hide()
+
+
+func _on_area_3d_5_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
+	$fallingblocks5.hide()
