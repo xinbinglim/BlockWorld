@@ -1,0 +1,137 @@
+[gd_scene load_steps=12 format=4 uid="uid://bdg7f4fbdmfxp"]
+
+[ext_resource type="Script" uid="uid://nt2pfsgo58ey" path="res://FallingPlatform.gd" id="1_mctgn"]
+[ext_resource type="Texture2D" uid="uid://14alxs26neqf" path="res://Pixel Blocks/glTF/Bricks_Grey_Blocks_PixelArt.png" id="2_jrq3c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lodxm"]
+resource_name = "Blocks_Pixelart"
+cull_mode = 2
+albedo_texture = ExtResource("2_jrq3c")
+roughness = 0.5
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xdhwt"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Blocks_Pixelart",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAD/////AAAAAAAA//8AAAAA//8AAAAAAAD///////8AAAAAAAD//wAAAAD/////AAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7g87r"]
+resource_name = "Bricks_Grey_Cube_597"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("6P/PZarNkTPo/5Ezqs3PZej/z2WqzZEz6P+RM6rNz2Xo/89lqs2RM+j/kTOqzc9l6P/PZarNkTPo/5Ezqs3PZarNz2Xo/5Ez6P/PZarNkTPo/5Ezqs3PZarNkTPo/89l"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_lodxm"),
+"name": "Blocks_Pixelart",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAAAA////////AAD//wAA//8AAP////8AAAAA/////wAAAAD/v/////////+//////wAA/7///wAA////v///AAD//wCAAAD/////AID///////8AgAAAAAD//wCAAAAAAP///78AAP//AAD/vwAA//////+/AAAAAAAA/7///wAAAABU1QAAAAD//1TV//8AAP//VNUAAAAAAABU1f///////1TVAAD//wAAVNX/////AABU1QAA/////1TV/3////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f////3////9/////f////3////9/////f////3///6oqVNWqKlTVqipU1aoqVNWqqqqqqqqqqqqqqqqqqqqq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xdhwt")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tj51s"]
+data = PackedVector3Array(-1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, -1, 1, -1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_behhx"]
+size = Vector3(2.00726, 2.1701, 2.0116)
+
+[sub_resource type="Animation" id="Animation_neka6"]
+resource_name = "Impact"
+length = 0.38
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.166667, 0.233333, 0.3, 0.38),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.05, 0), Vector3(0, 0, 0), Vector3(0, -0.04, 0), Vector3(0, 0, 0), Vector3(0, -0.02, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_py8fx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_urqbe"]
+resource_name = "fall"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -2.5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kfkuj"]
+_data = {
+&"Impact": SubResource("Animation_neka6"),
+&"RESET": SubResource("Animation_py8fx"),
+&"fall": SubResource("Animation_urqbe")
+}
+
+[node name="FallingPlatform" type="Node3D"]
+script = ExtResource("1_mctgn")
+
+[node name="Platform" type="StaticBody3D" parent="."]
+
+[node name="platform_falling" type="MeshInstance3D" parent="Platform"]
+mesh = SubResource("ArrayMesh_7g87r")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform"]
+shape = SubResource("ConcavePolygonShape3D_tj51s")
+
+[node name="Area3D" type="Area3D" parent="Platform"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00180054, 0.0778514, -0.00543213)
+shape = SubResource("BoxShape3D_behhx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="RestoreTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kfkuj")
+}
+
+[connection signal="body_entered" from="Platform/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_shape_entered" from="Platform/Area3D" to="." method="_on_area_3d_body_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="RestoreTimer" to="." method="_on_restore_timer_timeout"]

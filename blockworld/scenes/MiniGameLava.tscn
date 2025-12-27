@@ -1,10 +1,9 @@
-[gd_scene load_steps=21 format=4 uid="uid://bij14qckilym5"]
+[gd_scene load_steps=15 format=3 uid="uid://bij14qckilym5"]
 
 [ext_resource type="Script" uid="uid://d4mgy51ohwi8o" path="res://scenes/lava.gd" id="1_3ksr3"]
-[ext_resource type="PackedScene" uid="uid://drcegf6h2ksqo" path="res://scenes/player.tscn" id="2_j1nau"]
 [ext_resource type="MeshLibrary" uid="uid://8ycmsiledfni" path="res://resources/blocks.tres" id="3_7ibal"]
+[ext_resource type="PackedScene" uid="uid://drcegf6h2ksqo" path="res://scenes/player.tscn" id="4_3ksr3"]
 [ext_resource type="Script" uid="uid://dj80kyl8a8sk5" path="res://scenes/grid_map.gd" id="4_ost1a"]
-[ext_resource type="Texture2D" uid="uid://14alxs26neqf" path="res://Pixel Blocks/glTF/Bricks_Grey_Blocks_PixelArt.png" id="5_j1nau"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -28,8 +27,8 @@ metallic_specular = 0.48
 material = SubResource("StandardMaterial3D_rwgxs")
 size = Vector2(5000, 5000)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_71j4m"]
-size = Vector3(1, 0.512817, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ksr3"]
+size = Vector3(4384, 14.5543, 4335.17)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k0juu"]
 material = SubResource("StandardMaterial3D_rwgxs")
@@ -43,51 +42,6 @@ material = SubResource("StandardMaterial3D_rwgxs")
 [sub_resource type="PlaneMesh" id="PlaneMesh_qfnet"]
 material = SubResource("StandardMaterial3D_rwgxs")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lodxm"]
-resource_name = "Blocks_Pixelart"
-cull_mode = 2
-albedo_texture = ExtResource("5_j1nau")
-roughness = 0.5
-texture_filter = 2
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_lmd0r"]
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 2, 2),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
-"name": "Blocks_Pixelart",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AAAAAAAAAAD/////AAAAAAAA//8AAAAA//8AAAAAAAD///////8AAAAAAAD//wAAAAD/////AAD//wAA//8AAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_7ibal"]
-resource_name = "Bricks_Grey_Cube_597"
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 2, 2),
-"attribute_data": PackedByteArray("6P/PZarNkTPo/5Ezqs3PZej/z2WqzZEz6P+RM6rNz2Xo/89lqs2RM+j/kTOqzc9l6P/PZarNkTPo/5Ezqs3PZarNz2Xo/5Ez6P/PZarNkTPo/5Ezqs3PZarNkTPo/89l"),
-"format": 34896613399,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_lodxm"),
-"name": "Blocks_Pixelart",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("AAAAAAAA////////AAD//wAA//8AAP////8AAAAA/////wAAAAD/v/////////+//////wAA/7///wAA////v///AAD//wCAAAD/////AID///////8AgAAAAAD//wCAAAAAAP///78AAP//AAD/vwAA//////+/AAAAAAAA/7///wAAAABU1QAAAAD//1TV//8AAP//VNUAAAAAAABU1f///////1TVAAD//wAAVNX/////AABU1QAA/////1TV/3////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f////3////9/////f////3////9/////f////3///6oqVNWqKlTVqipU1aoqVNWqqqqqqqqqqqqqqqqqqqqq")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_lmd0r")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ost1a"]
-size = Vector3(2, 2, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_j1nau"]
-size = Vector3(9.96931, 0.167969, 2.05847)
-
 [node name="World" type="Node3D"]
 script = ExtResource("1_3ksr3")
 
@@ -98,9 +52,6 @@ environment = SubResource("Environment_4wyf3")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("2_j1nau")]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -5, 8, 5)
-
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("3_7ibal")
 data = {
@@ -109,15 +60,19 @@ data = {
 script = ExtResource("4_ost1a")
 metadata/_editor_floor_ = Vector3(0, 5, 0)
 
-[node name="Lava" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.973, -11.0417, 49.057)
+[node name="Player" parent="." instance=ExtResource("4_3ksr3")]
+
+[node name="Lava" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.78926, 0)
+
+[node name="Lava" type="MeshInstance3D" parent="Lava"]
 mesh = SubResource("PlaneMesh_4wyf3")
+skeleton = NodePath("../..")
 
-[node name="Area3D" type="Area3D" parent="Lava"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Lava/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.243591, 0)
-shape = SubResource("BoxShape3D_71j4m")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lava"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.06003, 0)
+shape = SubResource("BoxShape3D_3ksr3")
+debug_color = Color(0, 0.388235, 0.34902, 0.713726)
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -189,328 +144,4 @@ theme_override_font_sizes/font_size = 60
 text = "+"
 metadata/_edit_use_anchors_ = true
 
-[node name="fallingblocks" type="Node3D" parent="."]
-
-[node name="Bricks_Grey" type="MeshInstance3D" parent="fallingblocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks/Bricks_Grey"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks/Bricks_Grey/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey2" type="MeshInstance3D" parent="fallingblocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks/Bricks_Grey2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks/Bricks_Grey2/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey3" type="MeshInstance3D" parent="fallingblocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks/Bricks_Grey3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks/Bricks_Grey3/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey4" type="MeshInstance3D" parent="fallingblocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks/Bricks_Grey4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks/Bricks_Grey4/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey5" type="MeshInstance3D" parent="fallingblocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks/Bricks_Grey5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks/Bricks_Grey5/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Area3D1" type="Area3D" parent="fallingblocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.1098, -123.215)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks/Area3D1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99031, 0.941172, 0.256943)
-shape = SubResource("BoxShape3D_j1nau")
-debug_color = Color(0.992328, 0, 0.253559, 0.42)
-debug_fill = false
-
-[node name="fallingblocks2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-
-[node name="Bricks_Grey" type="MeshInstance3D" parent="fallingblocks2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks2/Bricks_Grey"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks2/Bricks_Grey/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey2" type="MeshInstance3D" parent="fallingblocks2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks2/Bricks_Grey2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks2/Bricks_Grey2/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey3" type="MeshInstance3D" parent="fallingblocks2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks2/Bricks_Grey3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks2/Bricks_Grey3/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey4" type="MeshInstance3D" parent="fallingblocks2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks2/Bricks_Grey4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks2/Bricks_Grey4/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey5" type="MeshInstance3D" parent="fallingblocks2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks2/Bricks_Grey5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks2/Bricks_Grey5/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Area3D2" type="Area3D" parent="fallingblocks2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.1098, -123.215)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks2/Area3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99031, 0.941172, 0.256943)
-shape = SubResource("BoxShape3D_j1nau")
-debug_color = Color(0.992328, 0, 0.253559, 0.42)
-debug_fill = false
-
-[node name="fallingblocks3" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-
-[node name="Bricks_Grey" type="MeshInstance3D" parent="fallingblocks3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks3/Bricks_Grey"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks3/Bricks_Grey/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey2" type="MeshInstance3D" parent="fallingblocks3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks3/Bricks_Grey2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks3/Bricks_Grey2/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey3" type="MeshInstance3D" parent="fallingblocks3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks3/Bricks_Grey3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks3/Bricks_Grey3/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey4" type="MeshInstance3D" parent="fallingblocks3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks3/Bricks_Grey4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks3/Bricks_Grey4/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey5" type="MeshInstance3D" parent="fallingblocks3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks3/Bricks_Grey5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks3/Bricks_Grey5/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Area3D3" type="Area3D" parent="fallingblocks3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.1098, -123.215)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks3/Area3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99031, 0.941172, 0.256943)
-shape = SubResource("BoxShape3D_j1nau")
-debug_color = Color(0.992328, 0, 0.253559, 0.42)
-debug_fill = false
-
-[node name="fallingblocks4" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
-
-[node name="Bricks_Grey" type="MeshInstance3D" parent="fallingblocks4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks4/Bricks_Grey"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks4/Bricks_Grey/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey2" type="MeshInstance3D" parent="fallingblocks4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks4/Bricks_Grey2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks4/Bricks_Grey2/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey3" type="MeshInstance3D" parent="fallingblocks4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks4/Bricks_Grey3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks4/Bricks_Grey3/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey4" type="MeshInstance3D" parent="fallingblocks4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks4/Bricks_Grey4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks4/Bricks_Grey4/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey5" type="MeshInstance3D" parent="fallingblocks4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks4/Bricks_Grey5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks4/Bricks_Grey5/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Area3D4" type="Area3D" parent="fallingblocks4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.1098, -123.215)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks4/Area3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99031, 0.941172, 0.256943)
-shape = SubResource("BoxShape3D_j1nau")
-debug_color = Color(0.992328, 0, 0.253559, 0.42)
-debug_fill = false
-
-[node name="fallingblocks5" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
-
-[node name="Bricks_Grey" type="MeshInstance3D" parent="fallingblocks5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks5/Bricks_Grey"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks5/Bricks_Grey/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey2" type="MeshInstance3D" parent="fallingblocks5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks5/Bricks_Grey2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks5/Bricks_Grey2/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey3" type="MeshInstance3D" parent="fallingblocks5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks5/Bricks_Grey3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks5/Bricks_Grey3/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey4" type="MeshInstance3D" parent="fallingblocks5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks5/Bricks_Grey4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks5/Bricks_Grey4/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Bricks_Grey5" type="MeshInstance3D" parent="fallingblocks5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 11, -122.951)
-mesh = SubResource("ArrayMesh_7ibal")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fallingblocks5/Bricks_Grey5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks5/Bricks_Grey5/StaticBody3D"]
-shape = SubResource("BoxShape3D_ost1a")
-
-[node name="Area3D5" type="Area3D" parent="fallingblocks5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.1098, -123.215)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fallingblocks5/Area3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99031, 0.941172, 0.256943)
-shape = SubResource("BoxShape3D_j1nau")
-debug_color = Color(0.992328, 0, 0.253559, 0.42)
-debug_fill = false
-
-[node name="falling blocks hide" type="Timer" parent="."]
-wait_time = 0.5
-
-[node name="falling blocks show" type="Timer" parent="."]
-wait_time = 2.0
-
-[connection signal="body_shape_entered" from="Lava/Area3D" to="." method="_on_area_3d_body_shape_entered"]
-[connection signal="body_entered" from="Node3D/Lava2/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="Node3D/Lava3/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="Node3D/Lava4/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="Node3D/Lava5/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_shape_entered" from="fallingblocks/Area3D1" to="." method="_on_area_3d_1_body_shape_entered"]
-[connection signal="body_shape_entered" from="fallingblocks2/Area3D2" to="." method="_on_area_3d_2_body_shape_entered"]
-[connection signal="body_shape_entered" from="fallingblocks3/Area3D3" to="." method="_on_area_3d_3_body_shape_entered"]
-[connection signal="body_shape_entered" from="fallingblocks4/Area3D4" to="." method="_on_area_3d_4_body_shape_entered"]
-[connection signal="body_shape_entered" from="fallingblocks5/Area3D5" to="." method="_on_area_3d_5_body_shape_entered"]
+[connection signal="body_shape_entered" from="Lava" to="." method="_on_lava_body_shape_entered"]

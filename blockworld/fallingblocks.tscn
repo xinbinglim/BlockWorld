@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=4 uid="uid://csd0kgc6abtc"]
+
+[ext_resource type="Texture2D" uid="uid://14alxs26neqf" path="res://Pixel Blocks/glTF/Bricks_Grey_Blocks_PixelArt.png" id="1_4eqel"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lodxm"]
+resource_name = "Blocks_Pixelart"
+cull_mode = 2
+albedo_texture = ExtResource("1_4eqel")
+roughness = 0.5
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lmd0r"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Blocks_Pixelart",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAD/////AAAAAAAA//8AAAAA//8AAAAAAAD///////8AAAAAAAD//wAAAAD/////AAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_whdbv"]
+resource_name = "Bricks_Grey_Cube_597"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("6P/PZarNkTPo/5Ezqs3PZej/z2WqzZEz6P+RM6rNz2Xo/89lqs2RM+j/kTOqzc9l6P/PZarNkTPo/5Ezqs3PZarNz2Xo/5Ez6P/PZarNkTPo/5Ezqs3PZarNkTPo/89l"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_lodxm"),
+"name": "Blocks_Pixelart",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAAAA////////AAD//wAA//8AAP////8AAAAA/////wAAAAD/v/////////+//////wAA/7///wAA////v///AAD//wCAAAD/////AID///////8AgAAAAAD//wCAAAAAAP///78AAP//AAD/vwAA//////+/AAAAAAAA/7///wAAAABU1QAAAAD//1TV//8AAP//VNUAAAAAAABU1f///////1TVAAD//wAAVNX/////AABU1QAA/////1TV/3////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f////3////9/////f////3////9/////f////3///6oqVNWqKlTVqipU1aoqVNWqqqqqqqqqqqqqqqqqqqqq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lmd0r")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqo4u"]
+size = Vector3(2, 2, 2)
+
+[node name="fallingblocks" type="Node3D"]
+
+[node name="Bricks_Grey" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_whdbv")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bricks_Grey"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bricks_Grey/StaticBody3D"]
+shape = SubResource("BoxShape3D_iqo4u")
+
+[node name="Bricks_Grey2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+mesh = SubResource("ArrayMesh_whdbv")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bricks_Grey2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bricks_Grey2/StaticBody3D"]
+shape = SubResource("BoxShape3D_iqo4u")
+
+[node name="Bricks_Grey3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = SubResource("ArrayMesh_whdbv")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bricks_Grey3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bricks_Grey3/StaticBody3D"]
+shape = SubResource("BoxShape3D_iqo4u")
+
+[node name="Bricks_Grey4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+mesh = SubResource("ArrayMesh_whdbv")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bricks_Grey4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bricks_Grey4/StaticBody3D"]
+shape = SubResource("BoxShape3D_iqo4u")
+
+[node name="Bricks_Grey5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+mesh = SubResource("ArrayMesh_whdbv")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bricks_Grey5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bricks_Grey5/StaticBody3D"]
+shape = SubResource("BoxShape3D_iqo4u")
