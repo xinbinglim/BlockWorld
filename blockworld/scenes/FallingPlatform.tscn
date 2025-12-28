@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://bdg7f4fbdmfxp"]
 
-[ext_resource type="Script" uid="uid://nt2pfsgo58ey" path="res://FallingPlatform.gd" id="1_mctgn"]
+[ext_resource type="Script" uid="uid://nt2pfsgo58ey" path="res://scenes/FallingPlatform.gd" id="1_mctgn"]
 [ext_resource type="Texture2D" uid="uid://14alxs26neqf" path="res://Pixel Blocks/glTF/Bricks_Grey_Blocks_PixelArt.png" id="2_jrq3c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lodxm"]

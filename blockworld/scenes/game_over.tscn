@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ocblwu8m0co4"]
 
-[ext_resource type="Script" uid="uid://4sr6t3hgr86n" path="res://h_box_container.gd" id="1_y26ei"]
+[ext_resource type="Script" uid="uid://ci4gl0tusyr8x" path="res://scenes/h_box_container.gd" id="1_y26ei"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xapjj"]
 content_margin_left = 10.0
@@ -17,7 +17,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="Control" type="Control"]
+[node name="Game_Over" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,14 +63,16 @@ script = ExtResource("1_y26ei")
 
 [node name="Main_menu" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+tooltip_text = "Go back to the Main Menu"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_xapjj")
 action_mode = 0
 text = "Main Menu"
 
-[node name="Button2" type="Button" parent="HBoxContainer"]
+[node name="Quit" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+tooltip_text = "Quit the Game"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_xapjj")
@@ -78,4 +80,4 @@ action_mode = 0
 text = "Quit"
 
 [connection signal="pressed" from="HBoxContainer/Main_menu" to="HBoxContainer" method="_on_main_menu_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button2" to="HBoxContainer" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="HBoxContainer" method="_on_quit_pressed"]

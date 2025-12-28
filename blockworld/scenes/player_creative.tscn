@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bf804ch5wwdce"]
+[gd_scene load_steps=10 format=3 uid="uid://bf804ch5wwdce"]
 
 [ext_resource type="Script" uid="uid://c8s4exnmkgm73" path="res://scenes/player.gd" id="1_pu8ly"]
-[ext_resource type="Texture2D" uid="uid://d1rt5ksh5nygw" path="res://png/2.png" id="2_d6jqk"]
-[ext_resource type="Texture2D" uid="uid://dpl53wx8ogxmo" path="res://png/4.png" id="3_mak0t"]
+[ext_resource type="Texture2D" uid="uid://dkppxpkiw0f8p" path="res://icons/Screenshot 2025-12-28 180356.png" id="2_d6jqk"]
+[ext_resource type="Texture2D" uid="uid://21ea6bra66ec" path="res://icons/Screenshot 2025-12-28 180403.png" id="3_mak0t"]
+[ext_resource type="Texture2D" uid="uid://bytxat5lbha5g" path="res://icons/Screenshot 2025-12-28 180343.png" id="4_erl7g"]
 [ext_resource type="Texture2D" uid="uid://bjyufplvc2jf0" path="res://png/1.png" id="4_w7hxl"]
-[ext_resource type="Texture2D" uid="uid://bp27qtg6rqdnk" path="res://png/3.png" id="5_erl7g"]
+[ext_resource type="Texture2D" uid="uid://by0v1mitxjlgh" path="res://icons/Screenshot 2025-12-28 180419.png" id="5_0gmcm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
 radius = 1.0
@@ -47,10 +48,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -172.0
-offset_top = -136.0
-offset_right = 178.0
-offset_bottom = -11.0
+offset_left = -257.0
+offset_top = -200.0
+offset_right = 263.0
+offset_bottom = -73.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0.775063, 0.775063, 0.775063, 0.980392)
@@ -60,16 +61,19 @@ theme_override_constants/icon_margin = 5
 theme_override_constants/h_separation = 5
 theme_override_styles/panel = SubResource("StyleBoxFlat_qlg0r")
 auto_width = true
-item_count = 4
-max_columns = 4
+item_count = 6
+max_columns = 8
 same_column_width = true
 fixed_column_width = 80
 icon_mode = 0
+icon_scale = 0.5
 item_0/text = "1"
 item_0/icon = ExtResource("2_d6jqk")
 item_1/text = "2"
 item_1/icon = ExtResource("3_mak0t")
 item_2/text = "3"
-item_2/icon = ExtResource("4_w7hxl")
+item_2/icon = ExtResource("4_erl7g")
 item_3/text = "4"
-item_3/icon = ExtResource("5_erl7g")
+item_3/icon = ExtResource("5_0gmcm")
+item_4/text = "5"
+item_4/icon = ExtResource("4_w7hxl")

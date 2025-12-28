@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcvocfe5i65nb"]
+[gd_scene load_steps=9 format=3 uid="uid://dcvocfe5i65nb"]
 
 [ext_resource type="Script" uid="uid://g3wa1kgk13qe" path="res://scenes/main_menu.gd" id="1_wu84c"]
 [ext_resource type="MeshLibrary" uid="uid://8ycmsiledfni" path="res://resources/blocks.tres" id="2_wu84c"]
 [ext_resource type="Script" uid="uid://dj80kyl8a8sk5" path="res://scenes/grid_map.gd" id="3_8ln24"]
-[ext_resource type="Script" uid="uid://bwya8t4v4o5ro" path="res://scenes/v_box_container.gd" id="3_bqqt6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -62,20 +61,22 @@ offset_bottom = 98.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
-script = ExtResource("3_bqqt6")
 
 [node name="Creative" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+tooltip_text = "Expand your creativity"
 theme_override_font_sizes/font_size = 40
-text = "Survival"
+text = "Creative"
 
 [node name="Parkour" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+tooltip_text = "A parkour mini game"
 theme_override_font_sizes/font_size = 40
 text = "Parkour"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+tooltip_text = "Quit the Game"
 theme_override_font_sizes/font_size = 40
 text = "Quit"
 
@@ -85,6 +86,6 @@ transform = Transform3D(0.75471, 0, -0.656059, 0, 1, 0, 0.656059, 0, 0.75471, 0,
 [node name="Camera3D" type="Camera3D" parent="Camera Pivot"]
 transform = Transform3D(-4.37114e-08, -0.258819, 0.965926, 0, 0.965926, 0.258819, -1, 1.13133e-08, -4.2222e-08, 50, 20, -5)
 
-[connection signal="pressed" from="VBoxContainer/Creative" to="VBoxContainer" method="_on_creative_pressed"]
-[connection signal="pressed" from="VBoxContainer/Parkour" to="VBoxContainer" method="_on_mini_games_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="VBoxContainer" method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creative" to="." method="_on_creative_pressed"]
+[connection signal="pressed" from="VBoxContainer/Parkour" to="." method="_on_parkour_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

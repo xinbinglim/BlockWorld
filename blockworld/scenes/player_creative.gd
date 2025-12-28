@@ -17,10 +17,11 @@ func _ready():
 	hotbar.select(0)
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		rotation.y = rotation.y - event.relative.x * sensitivity
-		camera_3d.rotation.x = camera_3d.rotation.x - event.relative.y * sensitivity
-		camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-90), deg_to_rad(80))
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseMotion:
+			rotation.y = rotation.y - event.relative.x * sensitivity
+			camera_3d.rotation.x = camera_3d.rotation.x - event.relative.y * sensitivity
+			camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-90), deg_to_rad(80))
 func _physics_process(delta):
 
 	# Handle jump.
@@ -31,7 +32,7 @@ func _physics_process(delta):
 			velocity.y -= 0.4
 		else:
 			position.y -= 0.4
-
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "up", "down")
@@ -71,6 +72,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("4"):
 		selected = 0
 		hotbar.select(3)
+	if Input.is_action_just_pressed("5"):
+		selected = 2
+		hotbar.select(4)
 		
 	 
 		

@@ -16,10 +16,12 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		rotation.y = rotation.y - event.relative.x * sensitivity
-		camera_3d.rotation.x = camera_3d.rotation.x - event.relative.y * sensitivity
-		camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-90), deg_to_rad(80))
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseMotion:
+			rotation.y = rotation.y - event.relative.x * sensitivity
+			camera_3d.rotation.x = camera_3d.rotation.x - event.relative.y * sensitivity
+			camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-90), deg_to_rad(80))
+		
 func _physics_process(delta):
 	
 	if not is_on_floor():
@@ -28,6 +30,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
