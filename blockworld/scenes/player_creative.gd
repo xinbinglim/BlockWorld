@@ -11,6 +11,7 @@ var selected = 6
 @onready var camera_3d = $Camera3D
 @onready var ray_cast_3d = $Camera3D/RayCast3D
 @onready var hotbar = $Hotbar
+@onready var frontview = $FrontView
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -43,7 +44,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0
 		velocity.z = 0
-	
+		  
 	if Input.is_action_just_pressed('left click'):
 		if ray_cast_3d.is_colliding():
 			if ray_cast_3d.get_collider().has_method('destroy_block'):

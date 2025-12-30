@@ -13,8 +13,8 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 func _on_creative_pressed() -> void:
-	get_tree().change_scene_to_packed(preload("res://scenes/Creative.tscn"))
+	get_tree().change_scene_to_packed(preload("res://scenes/tutorial_for_creative.tscn"))
 
 
 func _on_parkour_pressed() -> void:
-	get_tree().change_scene_to_packed(preload("res://scenes/MiniGameLava.tscn"))
+	get_tree().change_scene_to_packed(preload("res://scenes/tutorial_for_parkour.tscn"))

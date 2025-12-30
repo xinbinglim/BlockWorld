@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://c8s4exnmkgm73" path="res://scenes/player.gd" id="1_3vyb7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
-radius = 1.0
+radius = 0.9
 height = 4.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3vyb7"]
-radius = 1.0
+radius = 0.9
 height = 4.0
 
 [node name="Player" type="CharacterBody3D"]

@@ -1,11 +1,19 @@
 extends Node3D
 
 var current_spawn_point: Node3D
+@onready var frontview = $Player/FrontView
 
 func _ready() -> void:
 	$Escape.hide()
 
 func _process(delta):
+	if Input.is_action_just_pressed('change view'):
+		if frontview.current == true:
+			$CanvasLayer/Label.show()
+			$Player/Camera3D.make_current()
+		else:
+			$CanvasLayer/Label.hide()
+			frontview.make_current()
 	if Input.is_action_just_pressed("Escape"):
 		$Escape.show()
 		$CanvasLayer/Label.hide()
