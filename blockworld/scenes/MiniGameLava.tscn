@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://bij14qckilym5"]
+[gd_scene load_steps=23 format=3 uid="uid://bij14qckilym5"]
 
 [ext_resource type="Script" uid="uid://d4mgy51ohwi8o" path="res://scenes/lava.gd" id="1_3ksr3"]
 [ext_resource type="MeshLibrary" uid="uid://8ycmsiledfni" path="res://resources/blocks.tres" id="3_7ibal"]
 [ext_resource type="PackedScene" uid="uid://drcegf6h2ksqo" path="res://scenes/player.tscn" id="4_3ksr3"]
 [ext_resource type="Script" uid="uid://dj80kyl8a8sk5" path="res://scenes/grid_map.gd" id="4_ost1a"]
+[ext_resource type="PackedScene" uid="uid://ocblwu8m0co4" path="res://scenes/game_over.tscn" id="5_j1nau"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -34,7 +35,7 @@ size = Vector3(4384, 14.5543, 4335.17)
 material = SubResource("StandardMaterial3D_j1nau")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k0juu"]
-size = Vector3(1, 0.201294, 1)
+size = Vector3(2.08179, 0.329681, 1.98193)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_71j4m"]
 material = SubResource("StandardMaterial3D_j1nau")
@@ -57,6 +58,32 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_j1nau"]
+size = Vector3(31, 5.20013, 13)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1nau"]
+bg_color = Color(0, 0, 0, 0.796078)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ibal"]
+size = Vector3(9.98932, 4.14392, 6.55728)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ost1a"]
+size = Vector3(9.98932, 4.14392, 3.96317)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxneb"]
+size = Vector3(9.98932, 4.14392, 7.69523)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gqqc3"]
+size = Vector3(9.98932, 3.22641, 7.96459)
+
 [node name="World" type="Node3D"]
 script = ExtResource("1_3ksr3")
 
@@ -76,13 +103,13 @@ script = ExtResource("4_ost1a")
 metadata/_editor_floor_ = Vector3(0, 5, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_3ksr3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.16775, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.99406, 0)
 
 [node name="FrontView" type="Camera3D" parent="Player"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -4.155)
 
 [node name="Lava" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.78926, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
 [node name="Lava" type="MeshInstance3D" parent="Lava"]
 mesh = SubResource("PlaneMesh_4wyf3")
@@ -95,73 +122,53 @@ debug_color = Color(0, 0.388235, 0.34902, 0.713726)
 
 [node name="Node3D" type="Node3D" parent="."]
 
-[node name="Lava2" type="MeshInstance3D" parent="Node3D"]
+[node name="Lava_1" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1.812, 0, 0, 0, 9.339, 0, 0, 0, 1, 4.84654, 12.0157, -104.319)
 mesh = SubResource("PlaneMesh_k0juu")
 skeleton = NodePath("../..")
 metadata/_edit_group_ = true
 
-[node name="Area3D" type="Area3D" parent="Node3D/Lava2"]
+[node name="Lava_1" type="Area3D" parent="Node3D/Lava_1"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0913695, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava_1/Lava_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0550544, -0.032455, -0.00512695)
 shape = SubResource("BoxShape3D_k0juu")
 
-[node name="Lava3" type="MeshInstance3D" parent="Node3D"]
+[node name="Lava_2" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1.812, 0, 0, 0, 9.339, 0, 0, 0, 1, 0.127001, 12.0505, -108.988)
 mesh = SubResource("PlaneMesh_71j4m")
 skeleton = NodePath("../..")
 metadata/_edit_group_ = true
 
-[node name="Area3D" type="Area3D" parent="Node3D/Lava3"]
+[node name="Lava_2" type="Area3D" parent="Node3D/Lava_2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava3/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava_2/Lava_2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0913695, 0)
 shape = SubResource("BoxShape3D_k0juu")
 
-[node name="Lava4" type="MeshInstance3D" parent="Node3D"]
+[node name="Lava_3" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1.812, 0, 0, 0, 9.339, 0, 0, 0, 1, 5.72904, 12.0506, -113.341)
 mesh = SubResource("PlaneMesh_qfnet")
 skeleton = NodePath("../..")
 metadata/_edit_group_ = true
 
-[node name="Area3D" type="Area3D" parent="Node3D/Lava4"]
+[node name="Lava_3" type="Area3D" parent="Node3D/Lava_3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava4/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava_3/Lava_3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0913695, 0)
 shape = SubResource("BoxShape3D_k0juu")
 
-[node name="Lava5" type="MeshInstance3D" parent="Node3D"]
+[node name="Lava_4" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1.812, 0, 0, 0, 9.339, 0, 0, 0, 1, 0.0779309, 12.0506, -117.733)
 mesh = SubResource("PlaneMesh_qfnet")
 skeleton = NodePath("../..")
 metadata/_edit_group_ = true
 
-[node name="Area3D" type="Area3D" parent="Node3D/Lava5"]
+[node name="Lava_4" type="Area3D" parent="Node3D/Lava_4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava5/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Lava_4/Lava_4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0913695, 0)
 shape = SubResource("BoxShape3D_k0juu")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -41.5
-offset_right = 20.0
-offset_bottom = 41.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.32549)
-theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 60
-text = "+"
-metadata/_edit_use_anchors_ = true
 
 [node name="Escape" type="Control" parent="."]
 layout_mode = 3
@@ -216,7 +223,170 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3ksr3")
 action_mode = 0
 text = "Quit"
 
+[node name="Tutorial" type="Node3D" parent="."]
+
+[node name="Tutorial_1" type="Area3D" parent="Tutorial"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tutorial/Tutorial_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.41686, -10)
+shape = SubResource("BoxShape3D_j1nau")
+
+[node name="Label_1" type="Label" parent="Tutorial"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -74.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 10
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1nau")
+text = "The lava is rising! 
+Try to jump over the platform and get to higher place!"
+horizontal_alignment = 1
+
+[node name="Tutorial_2" type="Area3D" parent="Tutorial"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tutorial/Tutorial_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01839, 12.0477, -43.0378)
+shape = SubResource("BoxShape3D_7ibal")
+
+[node name="Label_2" type="Label" parent="Tutorial"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -34.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 10
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1nau")
+text = "Which one is the real way to go?"
+horizontal_alignment = 1
+
+[node name="Tutorial_3" type="Area3D" parent="Tutorial"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tutorial/Tutorial_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01839, 12.0477, -56.0881)
+shape = SubResource("BoxShape3D_ost1a")
+
+[node name="Label_3" type="Label" parent="Tutorial"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -34.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 10
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1nau")
+text = "Be careful, don't step on the wrong blocks!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tutorial_4" type="Area3D" parent="Tutorial"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tutorial/Tutorial_4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01839, 12.0477, -79.7431)
+shape = SubResource("BoxShape3D_nxneb")
+
+[node name="Label_4" type="Label" parent="Tutorial"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -34.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 10
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1nau")
+text = "Is there any hidden way?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tutorial_5" type="Area3D" parent="Tutorial"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tutorial/Tutorial_5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01839, 13.6023, -103.951)
+shape = SubResource("BoxShape3D_gqqc3")
+
+[node name="Label_5" type="Label" parent="Tutorial"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -34.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 10
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1nau")
+text = "Don't step on the red lava area!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -41.5
+offset_right = 20.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.32549)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 60
+text = "+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera Pivot" type="Node3D" parent="."]
+transform = Transform3D(0.75471, 0, -0.656059, 0, 1, 0, 0.656059, 0, 0.75471, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Camera Pivot"]
+transform = Transform3D(-4.37114e-08, -0.258819, 0.965926, 0, 0.965926, 0.258819, -1, 1.13133e-08, -4.2222e-08, 50, 20, -5)
+
+[node name="gameover" parent="." instance=ExtResource("5_j1nau")]
+
 [connection signal="body_shape_entered" from="Lava" to="." method="_on_lava_body_shape_entered"]
+[connection signal="body_shape_entered" from="Node3D/Lava_1/Lava_1" to="." method="_on_lava_1_body_shape_entered"]
+[connection signal="body_shape_entered" from="Node3D/Lava_2/Lava_2" to="." method="_on_lava_2_body_shape_entered"]
+[connection signal="body_shape_entered" from="Node3D/Lava_3/Lava_3" to="." method="_on_lava_3_body_shape_entered"]
+[connection signal="body_shape_entered" from="Node3D/Lava_4/Lava_4" to="." method="_on_lava_4_body_shape_entered"]
 [connection signal="pressed" from="Escape/HBoxContainer/Main_menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Escape/HBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Escape/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="body_shape_entered" from="Tutorial/Tutorial_1" to="." method="_on_tutorial_1_body_shape_entered"]
+[connection signal="body_shape_exited" from="Tutorial/Tutorial_1" to="." method="_on_tutorial_1_body_shape_exited"]
+[connection signal="body_shape_entered" from="Tutorial/Tutorial_2" to="." method="_on_tutorial_2_body_shape_entered"]
+[connection signal="body_shape_exited" from="Tutorial/Tutorial_2" to="." method="_on_tutorial_2_body_shape_exited"]
+[connection signal="body_shape_entered" from="Tutorial/Tutorial_3" to="." method="_on_tutorial_3_body_shape_entered"]
+[connection signal="body_shape_exited" from="Tutorial/Tutorial_3" to="." method="_on_tutorial_3_body_shape_exited"]
+[connection signal="body_shape_entered" from="Tutorial/Tutorial_4" to="." method="_on_tutorial_4_body_shape_entered"]
+[connection signal="body_shape_exited" from="Tutorial/Tutorial_4" to="." method="_on_tutorial_4_body_shape_exited"]
+[connection signal="body_shape_entered" from="Tutorial/Tutorial_5" to="." method="_on_tutorial_5_body_shape_entered"]
+[connection signal="body_shape_exited" from="Tutorial/Tutorial_5" to="." method="_on_tutorial_5_body_shape_exited"]

@@ -7,7 +7,7 @@ const JUMP_VELOCITY = 12.0
 var gravity := 35.0
 var sensitivity = 0.002
 var selected = 6
-
+ 
 
 @onready var camera_3d = $Camera3D
 @onready var ray_cast_3d = $Camera3D/RayCast3D
