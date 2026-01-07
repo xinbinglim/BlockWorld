@@ -13,6 +13,7 @@ func _ready() -> void:
 	$Tutorial/Label_4.hide()
 	$Tutorial/Label_5.hide()
 	$gameover.hide()
+	$Win.hide()
 	
 	
 func _init() -> void:
@@ -35,10 +36,14 @@ func _process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	if $Escape.visible == false:
 		if $Lava.position.y > 4:
-			$"Camera Pivot/Camera3D".make_current()
-			$CanvasLayer/Label.hide()
-			$gameover.show()
-			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+			if $Player.position.y < 6:
+				if $Win.visible == true:
+					$gameover.hide()
+				else:
+					$gameover.show()
+					$"Camera Pivot/Camera3D".make_current()
+					$CanvasLayer/Label.hide()
+					Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 			if $Player.position.y - 2.2 < $Lava.position.y:
 				respawn()
 		if tutorial_done == true:
@@ -136,3 +141,12 @@ func _on_lava_3_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index
 
 func _on_lava_4_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
 	respawn()
+
+
+func _on_win_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
+	if body == $Player:
+		$CanvasLayer/Label.hide()
+		$"Camera Pivot/Camera3D".make_current()
+		$gameover.hide()
+		$Win.show()
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)

@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn7t4ur64wa5j"]
+
+[ext_resource type="Script" uid="uid://d06k0fo4rvjvx" path="res://scenes/win.gd" id="1_r4oei"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xapjj"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.368627)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Win" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.5
+offset_top = -68.5
+offset_right = 271.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 100
+text = "You Win!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -672.0
+offset_top = 259.5
+offset_right = 670.0
+offset_bottom = 334.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1000
+script = ExtResource("1_r4oei")
+
+[node name="Main_menu" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Go back to the Main Menu"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_xapjj")
+action_mode = 0
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Quit the Game"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_xapjj")
+action_mode = 0
+text = "Quit"
+
+[connection signal="pressed" from="HBoxContainer/Main_menu" to="HBoxContainer" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="HBoxContainer" method="_on_quit_pressed"]

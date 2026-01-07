@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://bij14qckilym5"]
+[gd_scene load_steps=24 format=3 uid="uid://bij14qckilym5"]
 
 [ext_resource type="Script" uid="uid://d4mgy51ohwi8o" path="res://scenes/lava.gd" id="1_3ksr3"]
 [ext_resource type="MeshLibrary" uid="uid://8ycmsiledfni" path="res://resources/blocks.tres" id="3_7ibal"]
 [ext_resource type="PackedScene" uid="uid://drcegf6h2ksqo" path="res://scenes/player.tscn" id="4_3ksr3"]
 [ext_resource type="Script" uid="uid://dj80kyl8a8sk5" path="res://scenes/grid_map.gd" id="4_ost1a"]
 [ext_resource type="PackedScene" uid="uid://ocblwu8m0co4" path="res://scenes/game_over.tscn" id="5_j1nau"]
+[ext_resource type="PackedScene" uid="uid://cn7t4ur64wa5j" path="res://scenes/win.tscn" id="6_7ibal"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nnsk1"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -59,7 +60,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j1nau"]
-size = Vector3(31, 5.20013, 13)
+size = Vector3(9.94501, 1.59969, 2.06085)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1nau"]
 bg_color = Color(0, 0, 0, 0.796078)
@@ -103,7 +104,7 @@ script = ExtResource("4_ost1a")
 metadata/_editor_floor_ = Vector3(0, 5, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_3ksr3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.99406, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79737, 8.77816, -10.1303)
 
 [node name="FrontView" type="Camera3D" parent="Player"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -4.155)
@@ -372,6 +373,14 @@ transform = Transform3D(-4.37114e-08, -0.258819, 0.965926, 0, 0.965926, 0.258819
 
 [node name="gameover" parent="." instance=ExtResource("5_j1nau")]
 
+[node name="Win!" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Win!"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96143, 12.7816, -120.96)
+shape = SubResource("BoxShape3D_j1nau")
+
+[node name="Win" parent="." instance=ExtResource("6_7ibal")]
+
 [connection signal="body_shape_entered" from="Lava" to="." method="_on_lava_body_shape_entered"]
 [connection signal="body_shape_entered" from="Node3D/Lava_1/Lava_1" to="." method="_on_lava_1_body_shape_entered"]
 [connection signal="body_shape_entered" from="Node3D/Lava_2/Lava_2" to="." method="_on_lava_2_body_shape_entered"]
@@ -390,3 +399,4 @@ transform = Transform3D(-4.37114e-08, -0.258819, 0.965926, 0, 0.965926, 0.258819
 [connection signal="body_shape_exited" from="Tutorial/Tutorial_4" to="." method="_on_tutorial_4_body_shape_exited"]
 [connection signal="body_shape_entered" from="Tutorial/Tutorial_5" to="." method="_on_tutorial_5_body_shape_entered"]
 [connection signal="body_shape_exited" from="Tutorial/Tutorial_5" to="." method="_on_tutorial_5_body_shape_exited"]
+[connection signal="body_shape_entered" from="Win!" to="." method="_on_win_body_shape_entered"]
