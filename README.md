@@ -1,4 +1,4 @@
-# Bloack World
+# Block World
 This is a 3D first-person sandbox/platformer prototype created using the **Godot Engine**. The project focuses on core gameplay systems such as block placement, a hotbar inventory, and player movement across floating platforms.
 <img width="1919" height="1048" alt="image" src="https://github.com/user-attachments/assets/f039663d-22a1-44c4-a162-3e646eb5cff4" />
 
