@@ -14,8 +14,8 @@ var selected = 6
 @onready var frontview = $FrontView
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	hotbar.select(0)
+	
 
 func _unhandled_input(event):
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -23,8 +23,8 @@ func _unhandled_input(event):
 			rotation.y = rotation.y - event.relative.x * sensitivity
 			camera_3d.rotation.x = camera_3d.rotation.x - event.relative.y * sensitivity
 			camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-90), deg_to_rad(80))
+			
 func _physics_process(delta):
-
 	# Handle jump.
 	if Input.is_action_pressed('space'):
 		position.y += 0.4

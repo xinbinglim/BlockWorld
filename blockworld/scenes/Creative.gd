@@ -2,9 +2,13 @@ extends Node3D
 
 var current_spawn_point: Node3D
 @onready var frontview = $Player/FrontView
+var timeout = false
 
 func _ready() -> void:
 	$Escape.hide()
+	$help.show()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	$Timer.start()
 
 func _process(delta):
 	if Input.is_action_just_pressed('change view'):
@@ -18,7 +22,13 @@ func _process(delta):
 		$Escape.show()
 		$CanvasLayer/Label.hide()
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-
+	if $Escape.visible == false:
+		if timeout == true:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			get_viewport().warp_mouse(Vector2(0.0,0.0))
+			
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		$help.hide()
 func respawn():
 	$Player.set_global_position(Vector3(-.0,8.0,5.0))
 
@@ -34,3 +44,7 @@ func _on_back_pressed() -> void:
 	$Escape.hide()
 	$CanvasLayer/Label.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _on_timer_timeout() -> void:
+	timeout = true
